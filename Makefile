@@ -6,29 +6,32 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 18:25:17 by muribe-l          #+#    #+#              #
-#    Updated: 2024/03/19 19:31:38 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/03/20 11:44:51 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fract-ol
-SOURCES = $(wildcard src/*.c)
+SOURCES = src/fract-ol.c
 
-OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
-ODIR = ./obj
+OBJECTS = $(SOURCES:%.c=%.o)
+ODIR = ./src/obj
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -Iincludes
+MLX_LIB = libs/mlx/
+MLX_FLAGS = -L libs/mlx/ -lmlx -framework OpenGL -framework AppKit
 RM = rm -rf
 LIBFTNAME = libft.a
-LIBFTDIR = ./libft
+LIBFTDIR = ./libs/libft
 
 $(ODIR)/%.o: src/%.c
 	mkdir -p $(ODIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJECTS)
+	make -C $(MLX_LIB)
 	make -C $(LIBFTDIR) all
-	$(CC) $(CFLAGS) $(OBJECTS) $(LIBFTDIR)/$(LIBFTNAME) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJECTS) $(MLX_FLAGS) $(LIBFTDIR)/$(LIBFTNAME) -o $(NAME)
 
 all: $(NAME)
 
