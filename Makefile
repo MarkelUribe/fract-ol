@@ -6,12 +6,12 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 18:25:17 by muribe-l          #+#    #+#              #
-#    Updated: 2024/03/21 17:17:47 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/03/22 16:21:01 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fract-ol
-SOURCES = src/fract-ol.c src/free.c src/init.c src/render.c src/utils.c
+SOURCES = src/fract-ol.c src/free.c src/init.c src/render.c src/utils.c src/events.c
 
 OBJECTS = $(SOURCES:%.c=%.o)
 ODIR = ./src/obj

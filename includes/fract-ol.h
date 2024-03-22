@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/21 17:17:12 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:29:34 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 # include <math.h>
 
-# define WIN_X 1280
-# define WIN_Y 720
+# define WIN_X 1000
+# define WIN_Y 1000
 
 # define BLACK				0x000000 // RGB: (0, 0, 0)
 # define WHITE				0xFFFFFF // RGB: (255, 255, 255)
@@ -40,6 +40,24 @@
 # define SOLAR_FLARE_YELLOW	0xFFFF00 // RGB: (255, 255, 0)
 # define MAGENTA_MADNESS	0xFF00FF // RGB: (255, 0, 255)
 # define GALACTIC_INDIGO	0x4B0082 // RGB: (75, 0, 130)
+
+# define KeyPress 02
+# define ButtonPress 04
+# define DestroyNotify 17
+
+# define KeyPressMask (1L<<0)
+# define ButtonPressMask (1L<<2)
+# define StructureNotifyMask (1L<<17)
+
+# define XK_BackSpace 0xFF08
+# define XK_Tab 0xFF09
+# define XK_Escape 0xFF1B
+# define XK_Left 0xFF51
+# define XK_Up 0xFF52
+# define XK_Right 0xFF53
+# define XK_Down 0xFF54
+# define XK_plus 0x002B
+# define XK_minus 0x002D
 
 typedef struct s_point
 {
@@ -75,4 +93,5 @@ int		max_str_len(char *s1, char *s2);
 double	scale_pixel(double uns_num, double n_min, double n_max, double o_max);
 t_point	sum_p(t_point z1, t_point z2);
 t_point	square_p(t_point z);
+int		key_handler(int keysym, t_fractol *f);
 #endif

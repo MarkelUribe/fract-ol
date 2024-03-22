@@ -6,22 +6,23 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:17:43 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/21 16:57:10 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:19:45 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
 
-void	hooks(int key, t_fractol *f)
-{
-	if (key == 53)
-		exit_free_all(f);
-}
-
 void	data_init(t_fractol *f)
 {
-	f->scape_value = 2;
+	f->scape_value = 4;
 	f->iterations = 42;
+}
+
+static void	events_init(t_fractol *f)
+{
+	mlx_hook(f->win, KeyPress, KeyPressMask, key_handler, f);
+	//mlx_hook(f->win, ButtonPress, ButtonPressMask, mouse_handler, f);
+	//mlx_hook(f->win, DestroyNotify, StructureNotifyMask, close_handler, f);
 }
 
 void	fractal_init(t_fractol *f)
@@ -38,6 +39,5 @@ void	fractal_init(t_fractol *f)
 	f->img.pixels_ptr = mlx_get_data_addr(f->img.img_ptr, &f->img.bpp,
 										&f->img.line_len, &f->img.endian);
 	data_init(f);
-	mlx_hook(f->win, 17, 0, (void *)exit, f);
-	mlx_hook(f->win, 2, 0, (void *)hooks, f);
+	events_init(f);
 }

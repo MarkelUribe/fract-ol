@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:19:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/21 17:24:51 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:20:58 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static void	pixel_put(int x, int y, t_img *img, int color)
 {
 	int	offset;
+
 	offset = (y * img->line_len) + (x * (img->bpp / 8));
 	*(unsigned int *)(img->pixels_ptr + offset) = color;
 }
@@ -30,8 +31,8 @@ void	handle_pixel(int x, int y, t_fractol *f)
 	z.y = 0.0;
 	c.x = scale_pixel(x, -2, 2, WIN_X);
 	c.y = scale_pixel(y, 2, -2, WIN_Y);
-	i = -1;
-	while (i++ < f->iterations)
+	i = 0;
+	while (i < f->iterations)
 	{
 		z = sum_p(square_p(z), c);
 		if ((z.x * z.x) + (z.y * z.y) > f->scape_value)
@@ -40,8 +41,9 @@ void	handle_pixel(int x, int y, t_fractol *f)
 			pixel_put(x, y, &f->img, color);
 			return ;
 		}
+		i++;
 	}
-	pixel_put(x, y, &f->img, PSYCHEDELIC_PURPLE);
+	pixel_put(x, y, &f->img, WHITE);
 }
 
 void	fractal_render(t_fractol *f)
@@ -50,10 +52,10 @@ void	fractal_render(t_fractol *f)
 	int	y;
 
 	y = -1;
-	while (y++ < WIN_Y)
+	while (y++ < WIN_Y - 1)
 	{
 		x = -1;
-		while (y++ < WIN_X)
+		while (x++ < WIN_X - 1)
 			handle_pixel(x, y, f);
 	}
 	mlx_put_image_to_window(f->mlx, f->win, f->img.img_ptr, 0, 0);
