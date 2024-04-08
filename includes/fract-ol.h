@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/22 16:29:34 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:22:35 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,10 @@
 
 # include <math.h>
 
-# define WIN_X 1000
-# define WIN_Y 1000
+# define WIN_X 			1000
+# define WIN_Y 			1000
+# define SCAPE_VALUE	4
+# define ITERATIONS		42
 
 # define BLACK				0x000000 // RGB: (0, 0, 0)
 # define WHITE				0xFFFFFF // RGB: (255, 255, 255)
@@ -51,13 +53,13 @@
 
 # define XK_BackSpace 0xFF08
 # define XK_Tab 0xFF09
-# define XK_Escape 0xFF1B
-# define XK_Left 0xFF51
-# define XK_Up 0xFF52
-# define XK_Right 0xFF53
-# define XK_Down 0xFF54
-# define XK_plus 0x002B
-# define XK_minus 0x002D
+# define XK_Escape 53
+# define XK_Left 123
+# define XK_Up 126
+# define XK_Right 124
+# define XK_Down 125
+# define XK_plus 69
+# define XK_minus 78
 
 typedef struct s_point
 {

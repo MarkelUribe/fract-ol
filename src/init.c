@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:17:43 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/22 16:19:45 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/08 12:32:11 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	data_init(t_fractol *f)
 {
-	f->scape_value = 4;
-	f->iterations = 42;
+	f->scape_value = SCAPE_VALUE;
+	f->iterations = ITERATIONS;
 }
 
 static void	events_init(t_fractol *f)
