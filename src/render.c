@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:19:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/22 15:20:58 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:27:52 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	handle_pixel(int x, int y, t_fractol *f)
 
 	z.x = 0.0;
 	z.y = 0.0;
-	c.x = scale_pixel(x, -2, 2, WIN_X);
-	c.y = scale_pixel(y, 2, -2, WIN_Y);
+	c.x = (scale_pixel(x, -2, 2, WIN_X) * f->zoom) + f->shift_x;
+	c.y = (scale_pixel(y, 2, -2, WIN_Y) * f->zoom) + f->shift_y;
 	i = 0;
 	while (i < f->iterations)
 	{

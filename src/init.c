@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:17:43 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/08 12:32:11 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:26:51 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@ void	data_init(t_fractol *f)
 {
 	f->scape_value = SCAPE_VALUE;
 	f->iterations = ITERATIONS;
+	f->shift_x = 0.0;
+	f->shift_y = 0.0;
+	f->zoom = 1.0;
 }
 
 static void	events_init(t_fractol *f)
 {
 	mlx_hook(f->win, KeyPress, KeyPressMask, key_handler, f);
-	//mlx_hook(f->win, ButtonPress, ButtonPressMask, mouse_handler, f);
-	//mlx_hook(f->win, DestroyNotify, StructureNotifyMask, close_handler, f);
+	mlx_hook(f->win, ButtonPress, ButtonPressMask, mouse_handler, f);
+	mlx_hook(f->win, DestroyNotify, StructureNotifyMask, close_handler, f);
 }
 
 void	fractal_init(t_fractol *f)

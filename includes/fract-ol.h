@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/08 13:22:35 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:24:59 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 # include <math.h>
 
-# define WIN_X 			1000
-# define WIN_Y 			1000
+# define WIN_X 			800
+# define WIN_Y 			800
 # define SCAPE_VALUE	4
 # define ITERATIONS		42
 
@@ -84,6 +84,9 @@ typedef struct s_fractol
 	char	*name;
 	double	scape_value;
 	int		iterations;
+	double	shift_x;
+	double	shift_y;
+	double	zoom;
 }	t_fractol;
 
 void	free_all(t_fractol *f);
@@ -96,4 +99,6 @@ double	scale_pixel(double uns_num, double n_min, double n_max, double o_max);
 t_point	sum_p(t_point z1, t_point z2);
 t_point	square_p(t_point z);
 int		key_handler(int keysym, t_fractol *f);
+int		close_handler(t_fractol *f);
+int		mouse_handler(int button, int x, int y, t_fractol *f);
 #endif
