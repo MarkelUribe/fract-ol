@@ -6,11 +6,22 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:27:40 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/08 17:24:25 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:11:55 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
+
+int	julia_track(int x, int y, t_fractol *f)
+{
+	if (!ft_strncmp(f->name, "julia", 5))
+	{
+		f->julia_x = scale_pixel(x, -2, 2, WIN_X) * f->zoom;
+		f->julia_y = scale_pixel(y, 2, -2, WIN_Y) * f->zoom;
+		fractal_render(f);
+	}
+	return (0);
+}
 
 int	close_handler(t_fractol *f)
 {

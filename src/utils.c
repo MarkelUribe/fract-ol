@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:29 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/21 16:47:21 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:02:39 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	max_str_len(char *s1, char *s2)
 	else
 		return (s2l);
 }
+
 double	scale_pixel(double uns_num, double n_min, double n_max, double o_max)
 {
 	return ((n_max - n_min) * (uns_num - 0) / (o_max - 0) + n_min);

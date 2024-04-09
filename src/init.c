@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:17:43 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/08 16:26:51 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:19:59 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ static void	events_init(t_fractol *f)
 	mlx_hook(f->win, KeyPress, KeyPressMask, key_handler, f);
 	mlx_hook(f->win, ButtonPress, ButtonPressMask, mouse_handler, f);
 	mlx_hook(f->win, DestroyNotify, StructureNotifyMask, close_handler, f);
+	mlx_hook(f->win, MotionNotify, PointerMotionMask, julia_track, f);
 }
 
 void	fractal_init(t_fractol *f)
@@ -40,7 +41,7 @@ void	fractal_init(t_fractol *f)
 	if (!f->img.img_ptr)
 		error_free_all(f);
 	f->img.pixels_ptr = mlx_get_data_addr(f->img.img_ptr, &f->img.bpp,
-										&f->img.line_len, &f->img.endian);
+			&f->img.line_len, &f->img.endian);
 	data_init(f);
 	events_init(f);
 }

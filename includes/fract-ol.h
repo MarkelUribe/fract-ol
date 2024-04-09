@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/09 13:16:00 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:34:34 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define WIN_X 			800
 # define WIN_Y 			800
-# define SCAPE_VALUE	4
+# define SCAPE_VALUE	2
 # define ITERATIONS		42
 
 # define BLACK				0x000000 // RGB: (0, 0, 0)
@@ -46,10 +46,12 @@
 # define KeyPress 02
 # define ButtonPress 04
 # define DestroyNotify 17
+# define MotionNotify 06
 
 # define KeyPressMask (1L<<0)
 # define ButtonPressMask (1L<<2)
 # define StructureNotifyMask (1L<<17)
+# define PointerMotionMask (1L<<6)
 
 # define XK_BackSpace 0xFF08
 # define XK_Tab 0xFF09
@@ -103,4 +105,5 @@ t_point	square_p(t_point z);
 int		key_handler(int keysym, t_fractol *f);
 int		close_handler(t_fractol *f);
 int		mouse_handler(int button, int x, int y, t_fractol *f);
+int		julia_track(int x, int y, t_fractol *f);
 #endif
