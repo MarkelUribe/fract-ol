@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 15:15:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/03/20 11:17:52 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:01:18 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,3 +67,4 @@ void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 int		ft_printf(char const *format, ...);
 int		ft_hex(long nbr, char *base);
+double	ft_atodbl(char *s);

@@ -6,11 +6,25 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:19:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/08 16:27:52 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/09 13:01:06 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fract-ol.h"
+
+static void	mandel_julia(t_point *z, t_point *c, t_fractol *f)
+{
+	if (!ft_strncmp(f->name, "julia", 5))
+	{
+		c->x = f->julia_x;
+		c->y = f->julia_y;
+	}
+	else
+	{
+		c->x = z->x;
+		c->y = z->y;
+	}
+}
 
 static void	pixel_put(int x, int y, t_img *img, int color)
 {
@@ -27,10 +41,9 @@ void	handle_pixel(int x, int y, t_fractol *f)
 	int		i;
 	int		color;
 
-	z.x = 0.0;
-	z.y = 0.0;
-	c.x = (scale_pixel(x, -2, 2, WIN_X) * f->zoom) + f->shift_x;
-	c.y = (scale_pixel(y, 2, -2, WIN_Y) * f->zoom) + f->shift_y;
+	z.x = (scale_pixel(x, -2, 2, WIN_X) * f->zoom) + f->shift_x;
+	z.y = (scale_pixel(y, 2, -2, WIN_Y) * f->zoom) + f->shift_y;
+	mandel_julia(&z, &c, f);
 	i = 0;
 	while (i < f->iterations)
 	{
