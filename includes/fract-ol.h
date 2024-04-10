@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/09 16:34:34 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:40:55 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 # define WIN_X 			800
 # define WIN_Y 			800
-# define SCAPE_VALUE	2
+# define SCAPE_VALUE	4
 # define ITERATIONS		42
 
 # define BLACK				0x000000 // RGB: (0, 0, 0)
@@ -99,6 +99,7 @@ void	exit_free_all(t_fractol *f);
 void	fractal_init(t_fractol *f);
 void	fractal_render(t_fractol *f);
 int		max_str_len(char *s1, char *s2);
+int		is_number(const char *str);
 double	scale_pixel(double uns_num, double n_min, double n_max, double o_max);
 t_point	sum_p(t_point z1, t_point z2);
 t_point	square_p(t_point z);

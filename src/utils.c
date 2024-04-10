@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:29 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/09 16:02:39 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:36:10 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,28 @@ int	max_str_len(char *s1, char *s2)
 		return (s1l);
 	else
 		return (s2l);
+}
+
+int	is_number(const char *str)
+{
+	int hasDecimal = 0;
+	if (*str == '\0')
+		return 0;
+	if (*str == '-' || *str == '+')
+		str++;
+	while (*str != '\0')
+	{
+		if (*str == '.')
+		{
+	    	if (hasDecimal)
+				return (0);
+			hasDecimal = 1;
+		}
+		else if (*str < '0' || *str > '9')
+			return (0);
+		str++;
+	}
+	return (1);
 }
 
 double	scale_pixel(double uns_num, double n_min, double n_max, double o_max)
