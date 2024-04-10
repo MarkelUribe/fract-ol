@@ -6,7 +6,7 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/13 15:15:27 by muribe-l          #+#    #+#              #
-#    Updated: 2024/04/09 12:00:10 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/04/10 16:52:30 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,7 @@ OBJECTS = $(patsubst %.c,$(ODIR)/%.o,$(SOURCES))
 ODIR = ./obj
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -o2
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/10 14:40:55 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:53:09 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 # include <math.h>
 
-# define WIN_X 			800
-# define WIN_Y 			800
+# define WIN_X 			1200
+# define WIN_Y 			1200
 # define SCAPE_VALUE	4
 # define ITERATIONS		42
 
@@ -85,7 +85,7 @@ typedef struct s_fractol
 	t_img	img;
 	char	*name;
 	double	scape_value;
-	int		iterations;
+	int		iter;
 	double	shift_x;
 	double	shift_y;
 	double	zoom;

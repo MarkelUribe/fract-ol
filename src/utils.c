@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:29 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/10 14:36:10 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:21:34 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,20 @@ int	max_str_len(char *s1, char *s2)
 
 int	is_number(const char *str)
 {
-	int hasDecimal = 0;
+	int	hasdecimal;
+
+	hasdecimal = 0;
 	if (*str == '\0')
-		return 0;
+		return (0);
 	if (*str == '-' || *str == '+')
 		str++;
 	while (*str != '\0')
 	{
 		if (*str == '.')
 		{
-	    	if (hasDecimal)
+			if (hasdecimal)
 				return (0);
-			hasDecimal = 1;
+			hasdecimal = 1;
 		}
 		else if (*str < '0' || *str > '9')
 			return (0);

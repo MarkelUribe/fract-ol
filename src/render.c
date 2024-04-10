@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:19:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/09 16:28:09 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:54:45 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,12 @@ void	handle_pixel(int x, int y, t_fractol *f)
 	z.y = (scale_pixel(y, 2, -2, WIN_Y) * f->zoom) + f->shift_y;
 	mandel_julia(&z, &c, f);
 	i = 0;
-	while (i < f->iterations)
+	while (i < f->iter)
 	{
 		z = sum_p(square_p(z), c);
-		/* if point hypotenuse is too long, point does not belong */
 		if ((z.x * z.x) + (z.y * z.y) > f->scape_value)
 		{
-			color = scale_pixel(i, BLACK, WHITE, f->iterations);
+			color  = scale_pixel(i, BLACK, WHITE, f->iter);
 			pixel_put(x, y, &f->img, color);
 			return ;
 		}

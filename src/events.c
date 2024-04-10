@@ -6,7 +6,7 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:27:40 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/09 15:11:55 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:29:39 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ int	key_handler(int keysym, t_fractol *f)
 	if (keysym == XK_Escape)
 		exit_free_all(f);
 	else if (keysym == XK_plus)
-		f->iterations += 1;
+		f->iter += 1;
 	else if (keysym == XK_minus)
-		f->iterations -= 1;
+		f->iter -= 1;
 	else if (keysym == XK_Up)
 		f->shift_y += (0.5 * f->zoom);
 	else if (keysym == XK_Down)

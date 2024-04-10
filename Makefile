@@ -6,7 +6,7 @@
 #    By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/19 18:25:17 by muribe-l          #+#    #+#              #
-#    Updated: 2024/03/22 16:21:01 by muribe-l         ###   ########.fr        #
+#    Updated: 2024/04/10 16:48:50 by muribe-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJECTS = $(SOURCES:%.c=%.o)
 ODIR = ./src/obj
 
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g3 -Iincludes
+CFLAGS = -Wall -Wextra -Werror -o2 -Iincludes
 MLX_LIB = libs/mlx/
 MLX_FLAGS = -L libs/mlx/ -lmlx -framework OpenGL -framework AppKit
 RM = rm -rf
