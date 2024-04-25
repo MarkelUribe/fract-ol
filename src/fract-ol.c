@@ -6,11 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:05 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/22 11:54:19 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:01:06 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fract_ol.h"
 
 int	main(int argc, char **argv)
 {

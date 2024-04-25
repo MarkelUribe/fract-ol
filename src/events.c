@@ -6,11 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 15:27:40 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/10 16:29:39 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:06:15 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fract_ol.h"
 
 int	julia_track(int x, int y, t_fractol *f)
 {
@@ -46,19 +46,19 @@ int	mouse_handler(int button, int x, int y, t_fractol *f)
 
 int	key_handler(int keysym, t_fractol *f)
 {
-	if (keysym == XK_Escape)
+	if (keysym == XK_ESCAPE)
 		exit_free_all(f);
-	else if (keysym == XK_plus)
+	else if (keysym == XK_PLUS)
 		f->iter += 1;
-	else if (keysym == XK_minus)
+	else if (keysym == XK_MINUS)
 		f->iter -= 1;
-	else if (keysym == XK_Up)
+	else if (keysym == XK_UP)
 		f->shift_y += (0.5 * f->zoom);
-	else if (keysym == XK_Down)
+	else if (keysym == XK_DOWN)
 		f->shift_y -= (0.5 * f->zoom);
-	else if (keysym == XK_Left)
+	else if (keysym == XK_LEFT)
 		f->shift_x -= (0.5 * f->zoom);
-	else if (keysym == XK_Right)
+	else if (keysym == XK_RIGHT)
 		f->shift_x += (0.5 * f->zoom);
 	fractal_render(f);
 	return (0);

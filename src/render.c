@@ -6,11 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:19:14 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/22 13:15:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:01:20 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fract_ol.h"
 
 static void	mandel_julia(t_point *z, t_point *c, t_fractol *f)
 {

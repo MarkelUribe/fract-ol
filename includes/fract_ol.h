@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fract-ol.h                                         :+:      :+:    :+:   */
+/*   fract_ol.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:28:41 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/11 12:24:10 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:07:48 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,25 +43,20 @@
 # define MAGENTA_MADNESS	0xFF00FF // RGB: (255, 0, 255)
 # define GALACTIC_INDIGO	0x4B0082 // RGB: (75, 0, 130)
 
-# define KeyPress 02
-# define ButtonPress 04
-# define DestroyNotify 17
-# define MotionNotify 06
+# define KEYPRESS 02
+# define BUTTONPRESS 04
+# define DESTROYNOTIFY 17
+# define MOTIONNOTIFY 06
 
-# define KeyPressMask (1L<<0)
-# define ButtonPressMask (1L<<2)
-# define StructureNotifyMask (1L<<17)
-# define PointerMotionMask (1L<<6)
-
-# define XK_BackSpace 0xFF08
-# define XK_Tab 0xFF09
-# define XK_Escape 53
-# define XK_Left 123
-# define XK_Up 126
-# define XK_Right 124
-# define XK_Down 125
-# define XK_plus 69
-# define XK_minus 78
+# define XK_BACKSPACE 0xFF08
+# define XK_TAB 0xFF09
+# define XK_ESCAPE 53
+# define XK_LEFT 123
+# define XK_UP 126
+# define XK_RIGHT 124
+# define XK_DOWN 125
+# define XK_PLUS 69
+# define XK_MINUS 78
 
 typedef struct s_point
 {
@@ -71,7 +66,7 @@ typedef struct s_point
 
 typedef struct s_img
 {
-	void 	*img_ptr;
+	void	*img_ptr;
 	char	*pixels_ptr;
 	int		bpp;
 	int		endian;

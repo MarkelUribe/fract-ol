@@ -6,11 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:29:29 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/10 16:21:34 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:01:24 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fract_ol.h"
 
 int	max_str_len(char *s1, char *s2)
 {

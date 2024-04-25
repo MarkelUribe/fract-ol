@@ -6,11 +6,11 @@
 /*   By: muribe-l <muribe-l@student.42urduliz.co    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 15:57:24 by muribe-l          #+#    #+#             */
-/*   Updated: 2024/04/22 13:15:23 by muribe-l         ###   ########.fr       */
+/*   Updated: 2024/04/25 15:01:12 by muribe-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fract-ol.h"
+#include "fract_ol.h"
 
 void	free_all(t_fractol *f)
 {
